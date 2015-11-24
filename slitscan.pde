@@ -4,6 +4,8 @@
 PGraphics fbo;
 PShader frag;
 
+boolean Polar = false;
+
 int stepSize = 5;
 
 void setup(){
@@ -17,8 +19,10 @@ void setup(){
   fbo.background(0);
   fbo.endDraw();
   
+  if (Polar) frag = loadShader("polar.glsl");
+  else frag = loadShader("frag.glsl");
   
-  frag = loadShader("frag.glsl");
+  
 }
 
 void draw(){
@@ -34,10 +38,10 @@ void draw(){
     fbo.rotateX((float)frameCount * PI/180 * 3);
     
     //transformation of mid-frame iteration (slit-scan difference)
-    float j = frameCount * PI/180 + float(i)/200;
+    float j = PI/180 + float(i)/100;
     fbo.rotateY((float)j);
     
-    fbo.box(96);
+    fbo.box(90);
     
     fbo.endDraw();
     
