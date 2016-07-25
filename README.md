@@ -7,12 +7,12 @@ input:
 
 output:
 
-![input](samples/ouput.gif)
+![input](samples/output.gif)
 
 change granularity:
 
-![input](samples/ouput2.gif)
+![input](samples/output2.gif)
 
 polar coords:
 
-![input](samples/ouput3.gif)
+![input](samples/output3.gif)
